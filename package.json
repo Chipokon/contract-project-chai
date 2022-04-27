@@ -22,9 +22,13 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js --ignore sessions",
-    "db": "npx sequelize db:drop && npx sequelize db:create && npx sequelize db:migrate && npx sequelize db:seed:all"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dbc": "npx sequelize db:create",
+    "dbm": "npx sequelize db:migrate:undo:all && npx sequelize db:migrate",
+    "dbd": "npx sequelize db:drop",
+    "dbs": "npx sequelize db:seed:all",
+    "dev": "nodemon app.js --ignore ./sessions",
+    "db-restart": "npx sequelize db:drop && npx sequelize db:create && npx sequelize db:migrate && npx sequelize db:seed:all"
   },
   "repository": {
     "type": "git",

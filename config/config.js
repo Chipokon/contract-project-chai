@@ -4,7 +4,7 @@ const path = require('path');
 const hbs = require('hbs');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
-
+// const fileUpload = require('express-fileupload')
 const morgan = require('morgan');
 
 
@@ -46,6 +46,7 @@ module.exports = function expressConfig(app) {
   app.use(session(sessionConfig));
   app.use(cookieParser());
   app.use(morgan('dev'));
+  // app.use(fileUpload({}))
 };
 
 

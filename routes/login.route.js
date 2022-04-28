@@ -14,6 +14,7 @@ const { User } = require('../db/models');
 
     router.route('/')
   .get((req, res) => {
+   
     res.render('login')
   })
   .post(async (req, res) => {
@@ -23,7 +24,8 @@ const { User } = require('../db/models');
     if (user) {
       req.session.uid = user.id
       req.session.role = user.role
-      res.redirect('/main')
+      req.session.isAuth = true
+      res.redirect('/')
     } else {
       res.send('у тебя хромосом, как у броколи')
     }

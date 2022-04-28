@@ -11,7 +11,7 @@ const registRouter = require('./routes/regist.route');
 const config = require('./config/config');
 const logOutRouter = require('./routes/logout.route')
 // const commentRouter = require('./routes/comment.route')
-const sessionMiddleWare = require('./middleware/session')
+// const sessionMiddleWare = require('./middleware/session')
 const teaPageRouter = require('./routes/teaPage.route')
 
 
@@ -27,11 +27,11 @@ app.use('/login', loginRouter);
 app.use('/regist', registRouter);
 app.use('/logout', logOutRouter)
 // app.use('/comment', commentRouter)
-app.use('/comment',sessionMiddleWare)
+// app.use('/comment',sessionMiddleWare)
 app.use('/teaPage', teaPageRouter)
 
 //routes use
-app.use('/main', mainRouter);
+app.use('/', mainRouter);
 app.listen(PORT, () => {
   console.log(`***server get started PORT: ${PORT}`);
 })

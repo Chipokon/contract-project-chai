@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../db/models');
 
+
 router.get('/', async (req, res) => {
   const isAuthorized = req.session.uid;
   // console.log(234567890);
@@ -13,17 +14,20 @@ router.get('/', async (req, res) => {
   });
 });
 
+
 router.route('/')
   .get((req, res) => {
     res.render('login');
   })
   .post(async (req, res) => {
-    const { email, password } = req.body;
 
-    const user = await User.findOne({ where: { email, password } });
+    const { email, password } = req.body
+
+    const user = await User.findOne({ where: { email, password } })
     if (user) {
-      req.session.uid = user.id;
-      res.redirect('/main');
+      req.session.uid = user.id
+      req.session.role = user.role
+      res.redirect('/main')
     } else {
       res.send('у тебя хромосом, как у броколи');
     }

@@ -24,6 +24,7 @@ router.route('/')
         role: 'admin'
       })
       req.session.uid = newUser.id;
+      req.session.role = newUser.role
       res.redirect('/login')
     }
     else {
@@ -34,6 +35,7 @@ router.route('/')
         role: 'user',
       })
       req.session.uid = newUser.id;
+      req.session.role = newUser.role
       res.redirect('/login')
     }
   })

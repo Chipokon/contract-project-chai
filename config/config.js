@@ -4,6 +4,8 @@ const path = require('path');
 const hbs = require('hbs');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
+const morgan = require('morgan');
+
 
 // const FileStore = require('session-file-store')(session);
 
@@ -27,8 +29,6 @@ const sessionConfig = {
     // path: '/count'
   },
 };
-const morgan = require('morgan');
-const sessionConfig = require('./sessionConfig');
 
 module.exports = function expressConfig(app) {
   app.set('view engine', 'hbs');

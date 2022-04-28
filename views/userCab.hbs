@@ -1,0 +1,9 @@
+<div class="container">
+<h2>Здравствуйте, {{name}}!</h2>
+<h4>Ваши последние комментарии:</h4>
+<ul style="width: 500px" class="list-group">
+  {{#each everyTea}}
+  <li class="list-group-item">{{comment}}</li>
+  {{/each}}
+</ul>
+</div>

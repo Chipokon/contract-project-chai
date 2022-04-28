@@ -11,6 +11,13 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
+     await queryInterface.bulkInsert('Comments', [{
+      user_id: 1,
+      tea_id: 1,
+      comment: 'fcknSlaves',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+     }], {});
   },
 
   async down (queryInterface, Sequelize) {

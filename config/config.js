@@ -11,7 +11,14 @@ const morgan = require('morgan');
 
 // const sessionConfig = require('./sessionConfig');
 
+const locals = (req, res, next) => {
+  if(req.session.uid) {
+    res.locals.isAuth = true;
+    res.locals.uid = req.session.uid;
 
+  }
+  return next()
+}
 // const FileStore = require('session-file-store')(session);
 
 
@@ -48,6 +55,7 @@ module.exports = function expressConfig(app) {
   app.use(session(sessionConfig));
   app.use(cookieParser());
   app.use(morgan('dev'));
+  app.use(locals)
   // app.use(fileUpload({}))
 };
 

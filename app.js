@@ -15,7 +15,6 @@ const config = require('./config/config');
 const logOutRouter = require('./routes/logout.route');
 const adminCabRouter = require('./routes/adminCab.route');
 const userCabRouter = require('./routes/userCab.route');
-const logOutRouter = require('./routes/logout.route')
 // const commentRouter = require('./routes/comment.route')
 // const sessionMiddleWare = require('./middleware/session')
 const teaPageRouter = require('./routes/teaPage.route')

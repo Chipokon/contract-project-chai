@@ -1,6 +1,6 @@
 #map {
-  width: 1400px;
-  height: 500px;
+  width: 90%;
+  height: 78%;
   position: absolute;
 }
 
@@ -28,3 +28,12 @@
   width: 35%;
 }
 
+#nav{
+  margin-left: 4.1%;
+  padding: 2%;
+}
+
+/* #body{
+  background-size: cover;
+  background-image: url(https://p4.wallpaperbetter.com/wallpaper/162/260/915/mount-scenery-kerala-slope-hill-slopes-wallpaper-preview.jpg);
+} */

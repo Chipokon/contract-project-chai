@@ -5,6 +5,8 @@ const path = require('path');
 const hbs = require('hbs');
 const loginRouter = require('./routes/login.route');
 const registRouter = require('./routes/regist.route');
+const mapRouterAPI = require('./routes/map.route');
+
 const config = require('./config/config');
 const logOutRouter = require('./routes/logout.route')
 
@@ -18,7 +20,8 @@ config(app);
 
 app.use('/login', loginRouter);
 app.use('/regist', registRouter);
-app.use('/logout', logOutRouter)
+app.use('/logout', logOutRouter);
+app.use('/map',mapRouterAPI);
 
 
 //routes require

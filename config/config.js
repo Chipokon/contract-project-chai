@@ -4,8 +4,9 @@ const path = require('path');
 const hbs = require('hbs');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
-// const fileUpload = require('express-fileupload')
+
 const morgan = require('morgan');
+// const fileUpload = require('express-fileupload')
 
 
 // const sessionConfig = require('./sessionConfig');
@@ -40,16 +41,15 @@ module.exports = function expressConfig(app) {
   app.set('views', path.join(process.env.PWD, 'views'));
   hbs.registerPartials(path.join(process.env.PWD, 'views', 'partials'));
   app.use(express.urlencoded({ extended: true }));
-  app.use(express.json())
-  app.use(express.static('public'))
+  app.use(express.json());
+  app.use(express.static(path.join(process.env.PWD, 'public')));
+
   // подключаем миддлварку сессий
   app.use(session(sessionConfig));
   app.use(cookieParser());
   app.use(morgan('dev'));
   // app.use(fileUpload({}))
 };
-
-
 
 
 // module.exports = function config(app) {

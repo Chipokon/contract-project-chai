@@ -20,8 +20,8 @@ const sessionConfig = {
 module.exports = function config(app) {
   app.set('view engine', 'hbs');
   app.use(express.urlencoded({ extended: true }));
-  app.use(express.json())
-  app.use(express.static(path.join(__dirname, 'public')))
+  app.use(express.json());
+  app.use(express.static(path.join(__dirname, 'public')));
   // подключаем миддлварку сессий
   app.use(session(sessionConfig));
 };

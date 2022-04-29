@@ -24,23 +24,26 @@
 </head>
 
 <body id="body">
-  
-  
+
+
   <header>
     <ul id="nav" class="nav nav-pills">
       <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="/">Home</a>
+        <a class="nav-link active" aria-current="page" href="/">Домой</a>
       </li>
       {{#if isAuthorized}}
       <li class="nav-item">
-        <a class="nav-link" href="/logout">Logout</a>
+        <a class="nav-link" href="/lk" style="color: white;">Личный кабинет</a>
+      </li>
+      <li>
+        <a class="nav-link" href="/logout" style="color: white;">Выйти</a>
       </li>
       {{else}}
       <li class="nav-item">
-        <a class="nav-link" href="/regist">Registration</a>
+        <a class="nav-link" href="/regist" style="color: white;">Регистрация</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/login">Login</a>
+        <a class="nav-link" href="/login" style="color: white;">Войти <br>(в кувырке)</a>
       </li>
       {{/if}}
     </ul>

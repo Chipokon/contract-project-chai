@@ -2,6 +2,7 @@ const commentHBS = document.getElementById('teaPage')
 const commentsDiv = document.getElementById('commentsDiv')
 console.log(commentHBS);
 
+//ДОБАВЛЕНИЕ КОММЕНТОВ
 // if(commentHBS){
   commentHBS.addEventListener('submit', async (event) => {
     event.preventDefault()
@@ -17,5 +18,6 @@ console.log(commentHBS);
     newDiv.innerHTML = data;
     commentsDiv.append(newDiv);
     console.log(data)
+    event.target.reset(); 
   })
 // }

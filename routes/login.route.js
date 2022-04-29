@@ -27,7 +27,7 @@ router.route('/')
     if (user) {
       req.session.uid = user.id
       req.session.role = user.role
-      res.redirect('/main')
+      res.redirect('/')
     } else {
       res.send('у тебя хромосом, как у броколи');
     }

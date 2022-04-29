@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
     // console.log(everyTea);
     res.render('userCab', { everyTea, name: user.name });
   } else {
-    res.redirect('/main');
+    res.redirect('/');
   }
 });
 

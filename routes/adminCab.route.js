@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
     // console.log(everyTea);
     res.render('adminCab', { everyTea });
   } else {
-    res.redirect('/main');
+    res.redirect('/');
   }
 });
 

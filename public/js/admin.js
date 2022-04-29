@@ -28,6 +28,7 @@ addTeaForm?.addEventListener('submit', async (event) => {
   newDiv.innerHTML = data;
   cardDiv.append(newDiv);
   console.log(data);
+  event.target.reset(); 
 });
 
 cardDiv?.addEventListener('click', async (event) => {

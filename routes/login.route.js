@@ -27,6 +27,7 @@ router.route('/')
     if (user) {
       req.session.uid = user.id
       req.session.role = user.role
+
       req.session.isAuth = true
       res.redirect('/')
     } else {

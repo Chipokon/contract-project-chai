@@ -33,6 +33,10 @@
   padding: 2%;
 }
 
+.balloon_image {
+width: 100px;
+height: 100px;
+}
 /* #body{
   background-size: cover;
   background-image: url(https://p4.wallpaperbetter.com/wallpaper/162/260/915/mount-scenery-kerala-slope-hill-slopes-wallpaper-preview.jpg);

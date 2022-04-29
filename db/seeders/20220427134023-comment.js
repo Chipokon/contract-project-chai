@@ -14,7 +14,7 @@ module.exports = {
      await queryInterface.bulkInsert('Comments', [{
       user_id: 1,
       tea_id: 1,
-      comment: 'fcknSlaves',
+      comment: 'Это лучший чай, который я когда либо видел',
       createdAt: new Date(),
       updatedAt: new Date(),
      }], {});

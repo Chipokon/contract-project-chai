@@ -4,8 +4,21 @@ const path = require('path');
 const hbs = require('hbs');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
+
+const morgan = require('morgan');
+// const fileUpload = require('express-fileupload')
+
+
 // const sessionConfig = require('./sessionConfig');
 
+const locals = (req, res, next) => {
+  if(req.session.uid) {
+    res.locals.isAuth = true;
+    res.locals.uid = req.session.uid;
+
+  }
+  return next()
+}
 // const FileStore = require('session-file-store')(session);
 
 
@@ -28,22 +41,23 @@ const sessionConfig = {
     // path: '/count'
   },
 };
-const morgan = require('morgan');
+
 
 module.exports = function expressConfig(app) {
   app.set('view engine', 'hbs');
   app.set('views', path.join(process.env.PWD, 'views'));
   hbs.registerPartials(path.join(process.env.PWD, 'views', 'partials'));
   app.use(express.urlencoded({ extended: true }));
-  app.use(express.json())
-  app.use(express.static('public'))
+  app.use(express.json());
+  app.use(express.static(path.join(process.env.PWD, 'public')));
+
   // подключаем миддлварку сессий
   app.use(session(sessionConfig));
   app.use(cookieParser());
   app.use(morgan('dev'));
+  app.use(locals)
+  // app.use(fileUpload({}))
 };
-
-
 
 
 // module.exports = function config(app) {

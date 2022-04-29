@@ -29,11 +29,11 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     picture: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false
     },
     description: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false
     },
     createdAt: {

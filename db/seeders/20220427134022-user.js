@@ -12,10 +12,10 @@ module.exports = {
      * }], {});
     */
      await queryInterface.bulkInsert('Users', [{
-      name: 'Pussy',
-      email: 'Riot',
-      password: 'fcknSlaves',
-      role: 'user',
+      name: 'BossOfTheGym',
+      email: 'fckn@slave.com',
+      password: '123',
+      role: 'admin',
       createdAt: new Date(),
       updatedAt: new Date(),
      }], {});

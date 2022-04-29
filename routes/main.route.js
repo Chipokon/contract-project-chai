@@ -6,4 +6,13 @@ router.get('/', (req, res) => {
   res.render('main', {isAuthorized});
 });
 
+router.get('/lk', (req,res) =>{
+  if(req.session.role === 'admin') {
+    res.redirect('/admin')
+  } 
+  if(req.session.role === 'user'){
+    res.redirect('/user')
+  }
+})
+
 module.exports = router;

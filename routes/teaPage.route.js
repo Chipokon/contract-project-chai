@@ -1,10 +1,17 @@
 const router = require('express').Router();
-const { Tea, Comment } = require('../db/models');
+const { User, Tea, Comment } = require('../db/models');
 
 router.get('/:id', async (req,res) =>{
   const {id} = req.params;
-  const comments = await Comment.findAll({where: {tea_id:id}});
-  const tea = await Tea.findOne({where:{id:id}})
+  const comments = await Comment.findAll({
+    where: {tea_id:id},
+    include:[{
+      model: User,
+    }]
+  });
+  // console.log(comments[0].User);
+  const tea = await Tea.findOne({where:{id:id}});
+  // const userName = await Comment.({where:{user_id}})
   res.render('teaPage', {id:tea.id, comments, picture:tea.picture, tittle:tea.tittle, place:tea.place,description:tea.description})
 })
 .post('/:id', async(req, res)=>{

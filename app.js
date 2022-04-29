@@ -3,23 +3,22 @@ const express = require('express');
 const logger = require('morgan');
 const path = require('path');
 
-
-
-//routes require
-const mainRouter = require('./routes/main.route');
+// routes require
 const hbs = require('hbs');
+const mainRouter = require('./routes/main.route');
 const loginRouter = require('./routes/login.route');
 const registRouter = require('./routes/regist.route');
+const mapRouterAPI = require('./routes/map.route');
+
 const config = require('./config/config');
 
 const logOutRouter = require('./routes/logout.route');
 const adminCabRouter = require('./routes/adminCab.route');
 const userCabRouter = require('./routes/userCab.route');
-// const logOutRouter = require('./routes/logout.route')
-// const commentRouter = require('./routes/comment.route')
-const sessionMiddleWare = require('./middleware/session')
-const teaPageRouter = require('./routes/teaPage.route')
 
+// const commentRouter = require('./routes/comment.route')
+// const sessionMiddleWare = require('./middleware/session')
+const teaPageRouter = require('./routes/teaPage.route');
 
 const app = express();
 
@@ -33,10 +32,12 @@ app.use('/user', userCabRouter);
 app.use('/', mainRouter);
 app.use('/login', loginRouter);
 app.use('/regist', registRouter);
-app.use('/logout', logOutRouter)
+app.use('/logout', logOutRouter);
+app.use('/map', mapRouterAPI);
+app.use('/logout', logOutRouter);
 // app.use('/comment', commentRouter)
-app.use('/comment',sessionMiddleWare)
-app.use('/teaPage', teaPageRouter)
+// app.use('/comment',sessionMiddleWare)
+app.use('/teaPage', teaPageRouter);
 
 app.listen(PORT, () => {
   console.log(`***server get started PORT: ${PORT}`);

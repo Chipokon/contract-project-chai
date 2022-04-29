@@ -1,6 +1,6 @@
 #map {
-  width: 1400px;
-  height: 500px;
+  width: 90%;
+  height: 78%;
   position: absolute;
 }
 
@@ -26,5 +26,23 @@
 
 #teaPage {
   width: 35%;
+  margin: 10%, 10%;
 }
 
+#nav{
+  margin-left: 4.1%;
+  padding: 2%;
+}
+
+
+body {
+	background: linear-gradient(135deg, #e55d87 0%, #5fc3e4 100%);
+.balloon_image {
+width: 100px;
+height: 100px;
+
+}
+/* #body{
+  background-size: cover;
+  background-image: url(https://p4.wallpaperbetter.com/wallpaper/162/260/915/mount-scenery-kerala-slope-hill-slopes-wallpaper-preview.jpg);
+} */

@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
 
 router.route('/')
   .get((req, res) => {
-    res.render('login');
+    res.render('login')
   })
   .post(async (req, res) => {
 
@@ -27,6 +27,8 @@ router.route('/')
     if (user) {
       req.session.uid = user.id
       req.session.role = user.role
+
+      req.session.isAuth = true
       res.redirect('/')
     } else {
       res.send('у тебя хромосом, как у броколи');

@@ -7,11 +7,18 @@ async function init() {
     zoom: 2,
   });
 
+  map.controls.remove('geolocationControl'); // удаляем геолокацию
+  map.controls.remove('searchControl'); // удаляем поиск
+  map.controls.remove('trafficControl'); // удаляем контроль трафика
+  // map.controls.remove('typeSelector'); // удаляем тип
+  map.controls.remove('fullscreenControl'); // удаляем кнопку перехода в полноэкранный режим
+  // map.controls.remove('zoomControl'); // удаляем контрол зуммирования
+  // map.controls.remove('rulerControl'); // удаляем контрол правил
+  // map.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально)
   const response = await fetch('/map');
   const { point } = await response.json();
 
   // console.log(point);
-  console.log(point[0].place);
 
   for (let j = 0; j < point.length; j += 1) {
     // let apart_address = data[i].apart_city + ', ' + data[i].apart_street + ', ' + data[i].apart_house
@@ -41,8 +48,9 @@ async function init() {
           }, {
             iconLayout: 'default#image',
             iconImageHref: 'https://cdn-icons-png.flaticon.com/512/1087/1087420.png',
-            iconImageSize: [30, 30],
+            iconImageSize: [40, 40],
             iconImageOffset: [0, 0],
+          }, {
           });
           map.geoObjects.add(placemark);
         }
@@ -50,4 +58,4 @@ async function init() {
   }
 }
 
-//pukikaki
+// pukikaki

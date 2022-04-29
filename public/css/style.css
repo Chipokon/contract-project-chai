@@ -1,7 +1,6 @@
 #map {
   width: 90%;
   height: 78%;
-  position: absolute;
 }
 
 .adminCab {
@@ -36,6 +35,11 @@
 .balloon_image {
 width: 100px;
 height: 100px;
+}
+
+.balloon {
+  width: 250px;
+  height: 400px;
 }
 /* #body{
   background-size: cover;

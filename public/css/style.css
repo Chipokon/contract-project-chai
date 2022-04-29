@@ -36,10 +36,10 @@
 
 body {
 	background: linear-gradient(135deg, #e55d87 0%, #5fc3e4 100%);
-.balloon_image {
-width: 100px;
-height: 100px;
+}
 
+.tittle{
+color:rgb(184, 33, 171);
 }
 
 .balloon {

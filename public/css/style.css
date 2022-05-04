@@ -1,0 +1,52 @@
+#map {
+  width:90vw;
+  height:50vh;
+}
+
+.adminCab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+
+[class*="copyrights-pane"] {
+  display: none !important;
+}
+
+.balloon_address {
+  color: #f50000;
+}
+
+[class*="balloon__close-button"] {
+  opacity:1;
+}
+
+#teaPage {
+  width: 35%;
+  margin: 10%, 10%;
+}
+
+#nav{
+  margin-left: 4.1%;
+  padding: 2%;
+}
+
+
+body {
+	background: linear-gradient(135deg, #e55d87 0%, #5fc3e4 100%);
+}
+
+.tittle{
+color:rgb(184, 33, 171);
+}
+
+.balloon {
+  width: 250px;
+  height: 400px;
+}
+/* #body{
+  background-size: cover;
+  background-image: url(https://p4.wallpaperbetter.com/wallpaper/162/260/915/mount-scenery-kerala-slope-hill-slopes-wallpaper-preview.jpg);
+} */

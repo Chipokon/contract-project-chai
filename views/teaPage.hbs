@@ -1,0 +1,36 @@
+<form id="teaPage" name="teaPage" action="/teaPage/{{id}}" method="POST" class="container">
+  <div class="card" style="width:30rem;">
+    {{#if isAuthorized}}
+    
+      <a class="nav-link" href="/lk" style="color: white;">Личный кабинет</a>
+    
+ 
+      <a class="nav-link" href="/logout" style="color: white;">Выйти</a>
+  
+    {{/if}}
+    <div class="card-body " style="">
+      <img src="{{picture}}" class="card-img-top rounded-bottom" style="width:100%;" alt="...">
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Название: {{tittle}}</li>
+      <li class="list-group-item">Место культивации: {{place}}</li>
+      <li class="list-group-item">Описание: {{description}}</li>
+    </ul>
+    <div class="form-floating">
+      <input name="comment1" class="form-control" placeholder="Leave a comment here" id="floatingTextarea">
+      <label for="floatingTextarea">Попробуй оставить комментарий</label>
+      <button type="submit" class="btn btn-primary">Отправить комментарий</button>
+    </div>
+
+    <div id="commentsDiv" class="container">
+      Ваши комментарии (в смысле всех вас): <br>
+      <br>
+      <ul class="list-group list-group-flush">
+        {{#each comments}}
+        <li class="list-group-item">{{this.User.name}}:<br>
+          {{comment}}</li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</form>

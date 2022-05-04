@@ -1,0 +1,25 @@
+<form id="addTeaForm" class="container" style="width: 600px;" action="/admin" method="POST">
+  <br>
+  <h2>Add tea:</h2><br>
+    <input type="text" name="tittle" class="form-control" aria-describedby="emailHelp" placeholder="Title"><br>
+    <input type="text" name="place" class="form-control" id="exampleInputPassword1" placeholder="Place"><br>
+    <input type="text" name="picture" class="form-control" id="exampleInputPassword1" placeholder="Image URL"><br>
+    <input type="text" name="description" class="form-control" id="exampleInputPassword1" placeholder="Description"><br>
+  <button type="submit" class="btn btn-primary">Add</button>
+</form>
+
+<div id="cardDiv" class="container adminCab" style="padding-top: 100px; display: flex; justify-content: space-around; align-items: center; flex-direction: row; flex-wrap: wrap; align-content: space-around">
+{{#each everyTea}}
+<div id="divo/{{id}}" name="teaCard" class="card" style="width: 18rem; height: 800px">
+  <img src="{{picture}}" class="card-img-top" style="object-fit: cover; width:285px; height: 225px; " alt="кiт">
+  <div class="card-body">
+    <h5 class="card-title">{{tittle}}</h5>
+    <p class="card-text">{{place}}</p>
+    <p class="card-text">{{description}}</p>
+  </div>
+  <div class="card-body">
+    <a href="#" id="{{id}}" name="delete" class="card-link">Delete</a>
+  </div>
+</div>
+{{/each}}
+</div>
